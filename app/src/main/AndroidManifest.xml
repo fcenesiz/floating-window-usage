@@ -11,11 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FloatingWindowsUsage"
-        tools:targetApi="31">
+        tools:targetApi="33">
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
+            android:supportsPictureInPicture="true"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
             android:theme="@style/Theme.FloatingWindowsUsage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +29,8 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <receiver android:name=".MainActivity$MyReceiver"/>
     </application>
 
 </manifest>
